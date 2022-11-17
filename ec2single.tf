@@ -15,14 +15,10 @@ provider "aws" {
 
  #text
  
-resource "aws_s3_bucket" "unrestricted" {
-  bucket = "examplebuckettftest"
-  acl    = "private"
-  versioning {
-    enabled = true
+resource "aws_instance" "app_server1" {
+  ami           = "ami-830c94e3"
+  instance_type = "t2.micro"
+  tags = {
+    Name = "ExampleAppServerInstance"
   }
-  logging {
-    target_bucket = "pavantestbucket"
-    target_prefix = "log/"
-    }
 }
