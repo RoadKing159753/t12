@@ -19,7 +19,7 @@ resource "aws_s3_bucket" "unrestricted" {
   bucket = "examplebuckettftest"
   acl    = "private"
   versioning {
-    enabled = false
+    enabled = true
   }
   logging {
     target_bucket = "pavantestbucket"
