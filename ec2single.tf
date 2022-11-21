@@ -20,9 +20,11 @@ resource "aws_s3_bucket" "unrestricted" {
   acl    = "private"
   versioning {
     enabled = true
+    mfa_delete = false
   }
   logging {
     target_bucket = "pavantestbucket"
     target_prefix = "log/"
     }
 }
+
